@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <p>Index page</p>
 </template>
 
 <script>
