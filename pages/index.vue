@@ -1,6 +1,9 @@
 <template>
   <article class="searchPage">
     <section class="searchPage_searchBox">
+      <header class="searchBox_header">
+        Search movie
+      </header>
       <TextInput
         name="Search"
         v-model="search"

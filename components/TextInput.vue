@@ -1,17 +1,17 @@
 <template>
-  <div :class="`inputContainer ${outlined ? 'inputContainer--outlined' : null}`">
+  <div :class="`inputContainer ${isOutlined ? 'inputContainer--outlined' : null}`">
     <label
       :for="name"
-      :class="`inputContainer_label ${outlined ? 'inputContainer--outlined_label' : null}`"
+      :class="`inputContainer_label ${isOutlined ? 'inputContainer--outlined_label' : null}`"
     >
       {{ name }}
     </label>
     <input
-      :class="`inputContainer_input ${outlined ? 'inputContainer--outlined_input' : null}`"
+      :class="`inputContainer_input ${isOutlined ? 'inputContainer--outlined_input' : null}`"
       :name="name"
       :type="hidden ? 'password' : 'text'"
       :value="value"
-      @focus="outlined = true"
+      @focus="isOutlined = true"
       @blur="handleFocusOut"
       @input="handleInput"
     />
@@ -31,12 +31,17 @@ export default {
       default: false,
     },
 
+    outlined: {
+      type: Boolean,
+      default: false,
+    },
+
     value: String,
   },
 
   data() {
     return {
-      outlined: false,
+      isOutlined: null,
     };
   },
 
@@ -46,8 +51,14 @@ export default {
     },
 
     handleFocusOut(event) {
-      this.outlined = event.target.value.length;
-    }
+      if (!this.outlined) {
+        this.isOutlined = event.target.value.length;
+      }
+    },
+  },
+
+  fetch() {
+    this.isOutlined = this.outlined;
   }
 };
 </script>

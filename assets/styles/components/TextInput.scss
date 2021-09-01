@@ -1,3 +1,14 @@
+@mixin outlined_label {
+  top: -5%;
+  background: $dark;
+}
+
+@mixin outlined_input {
+  outline: none;
+  background: $dark;
+  border: 2px solid $primary;
+}
+
 .inputContainer {
   position: relative;
 
@@ -15,17 +26,24 @@
     height: 100%;
 
     padding: $padding_small;
+    border-radius: $border_radius_default;
+  }
+
+  &_input:focus {
+    @include outlined_input;
+  }
+
+  &_input:focus &_label {
+    @include outlined_label;
   }
 }
 
 .inputContainer--outlined {
   &_label {
-    top: -5%;
-    background: $dark;
+    @include outlined_label;
   }
 
   &_input {
-    background: $dark;
-    border: 2px solid $primary;
+    @include outlined_input;
   }
 }

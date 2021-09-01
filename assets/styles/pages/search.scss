@@ -5,12 +5,17 @@
   background: url('~/assets/img/search_image.jpg');
   background-position: center;
 
-  &_searchBox {
+  .searchPage_searchBox {
     background: $dark;
 
     width: 30rem;
     height: 30rem;
 
     padding: $padding_big;
+
+    .searchBox_header {
+      margin-bottom: $padding_default;
+      font-size: $header_font_size_default;
+    }
   }
 }
