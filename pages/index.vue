@@ -1,7 +1,10 @@
 <template>
   <article class="searchPage">
     <section class="searchPage_searchBox">
-      <TextInput name="Search"/>
+      <TextInput
+        name="Search"
+        v-model="search"
+      />
     </section>
   </article>
 </template>

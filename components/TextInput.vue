@@ -10,6 +10,7 @@
       :class="`inputContainer_input ${outlined ? 'inputContainer--outlined_input' : null}`"
       :name="name"
       :type="hidden ? 'password' : 'text'"
+      :value="value"
       @focus="outlined = true"
       @blur="handleFocusOut"
       @input="handleInput"
@@ -29,6 +30,8 @@ export default {
       type: Boolean,
       default: false,
     },
+
+    value: String,
   },
 
   data() {
