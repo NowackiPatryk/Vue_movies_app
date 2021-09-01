@@ -1,7 +1,7 @@
 <template>
   <article class="searchPage">
     <section class="searchPage_searchBox">
-      <TextInput name="Search" @input="logValue"/>
+      <TextInput name="Search"/>
     </section>
   </article>
 </template>
@@ -21,9 +21,6 @@ export default {
   },
 
   methods: {
-    logValue(value) {
-      console.log(value);
-    },
   },
 };
 </script>
