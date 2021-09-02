@@ -43,5 +43,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  env: {
+    rapidApiKey: process.env.RAPID_API_KEY,
+    rapidHost: process.env.RAPID_HOST,
+  },
 }
