@@ -4,10 +4,22 @@
       <header class="searchBox_header">
         Search movie
       </header>
-      <TextInput
-        name="Search"
-        v-model="search"
-      />
+      <form class="searchBox_form">
+        <TextInput
+          name="Search"
+          v-model="search"
+        />
+
+        <button
+          class = "form_submitBtn"
+          @click.prevent = "redirectToSearch"
+        >
+          Submit
+        </button>
+      </form>
+      <p class="searchBox_info">
+        Type name of the movie in label above and enjoy informations that you're looking for!
+      </p>
     </section>
   </article>
 </template>
@@ -27,6 +39,9 @@ export default {
   },
 
   methods: {
+    redirectToSearch() {
+      this.$router.push(`/results?term=${this.search}`);
+    }
   },
 };
 </script>

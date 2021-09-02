@@ -6,16 +6,44 @@
   background-position: center;
 
   .searchPage_searchBox {
-    background: $dark;
+    @include flex-centered;
+    @include shadow;
 
     width: 30rem;
     height: 30rem;
 
     padding: $padding_big;
 
+    background: $dark;
+
     .searchBox_header {
       margin-bottom: $padding_default;
       font-size: $header_font_size_default;
+    }
+
+    .searchBox_form {
+      width: 70%;
+      height: 100%;
+
+      .form_submitBtn {
+        width: 100%;
+
+        margin-top: $padding_big;
+
+        border: 0;
+        padding: $padding_small;
+        outline: none;
+
+        @include button-outlined;
+      }
+
+      .form_submitBtn:hover {
+        @include button-default;
+      }
+    }
+
+    .searchBox_info {
+      text-align: center;
     }
   }
 }
