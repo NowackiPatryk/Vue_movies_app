@@ -1,5 +1,5 @@
 <template>
-  <article class="resultsPage">
+  <article class="resultsPage" v-if="!isLoading">
     <nuxt-link
       v-for="result in results"
       :to="`results/${extractMovieId(result.id)}`"
@@ -38,10 +38,16 @@
       </div>
     </nuxt-link>
   </article>
+  <Loading v-else />
 </template>
 
 <script>
+import Loading from '../../components/Loading';
+
 export default {
+  components: {
+    Loading,
+  },
 
   data() {
     return {
