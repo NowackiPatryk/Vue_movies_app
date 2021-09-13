@@ -1,0 +1,157 @@
+.resultPage {
+  @include page-default;
+  @include flex-default;
+
+  .resultPage_main {
+    @include flex-default;
+
+    width: 100%;
+
+    .main_imgContainer {
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+
+      .imgContainer_header {
+        font-size: $header_font_size_default;
+        margin-bottom: $padding_default;
+      }
+    }
+
+    .main_cast {
+      @include flex-centered;
+  
+      justify-content: flex-start;
+      width: 100%;
+  
+      padding: $padding_default $padding_big;
+
+      .cast_toggleVisibilityButton {
+        cursor: pointer;
+      }
+  
+      .cast_eachActor {
+        @include flex-centered;
+
+        width: 100%;
+        margin-top: $padding_default;
+
+        .eachActor_imageContainer {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+
+          .imageContainer_image {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .eachActor_name {
+          font-weight: bold;
+          margin-top: $padding_small;
+        }
+      }
+
+      .cast_eachActor:nth-child(1) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .resultPage_commentsContainer {
+    @include flex-centered;
+
+    width: 100%;
+
+    padding: $padding_big;
+
+    .commentsContainer_addForm {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .addForm_row {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      min-height: 80vh;
+
+      .addForm_submit {
+        @include button-default;
+
+        padding: $padding_big;
+
+        text-align: center;
+      }
+
+      .addForm_submit:hover {
+        @include button-outlined;
+      }
+    }
+
+    .commentsContainer_comments {
+      width: 100%;
+      margin-top: $padding_big;
+
+      .comments_comment {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        margin-top: $padding_big;
+
+        .comment_info, .comment_content {
+          width: 100%;
+        }
+
+        .comment_info {
+          display: flex;
+          align-items: center;
+
+          .info_nick {
+            margin-right: $padding_default;
+          }
+        }
+
+        .comment_content {
+          margin-top: $padding_small;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 1024px) {
+  .resultPage {
+    flex-direction: column;
+
+    .resultPage_main {
+      flex-direction: row;
+      .main_imgContainer {
+        width: 75%;
+        max-width: 75%;
+        height: 100vh;
+      }
+  
+      .main_cast {
+        width: 25%;
+        max-height: 100vh;
+        height: 100%;
+        overflow-y: scroll;
+
+        .cast_toggleVisibilityButton {
+          display: none;
+        }
+      }
+    }
+  }
+}

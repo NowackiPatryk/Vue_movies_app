@@ -8,11 +8,15 @@
 
 @import './pages/search.scss';
 @import './pages/results.scss';
+@import './pages/result.scss';
 
 //  components
 
 @import './components/TextInput.scss';
+@import './components/TextArea.scss';
 @import './components/Loading.scss';
+@import './components/ImageSlider.scss';
+@impirt './components/RatingInput.scss';
 
 * {
   box-sizing: border-box;
